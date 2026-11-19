@@ -36,46 +36,47 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
     }
   };
 
+  // Clean navigation links with crisp, single-line labels
   const navLinks = [
     { id: "home", label: "Home" },
-    { id: "shop", label: "Shop Catalogue" },
+    { id: "shop", label: "Shop" },
     { id: "why-us", label: "Why Us" },
     { id: "manufacturing", label: "Manufacturing" },
     { id: "customization", label: "Custom Prints" },
     { id: "about", label: "About Us" },
-    { id: "contact", label: "Contact & Wholesale" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
     <header className="sticky top-0 z-40 w-full transition-all duration-300">
       {/* Top Wholesale Micro-Banner */}
-      <div className="bg-[#573820] text-[#F5EFE6] text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
-            <span className="inline-flex items-center gap-1 font-medium bg-[#B77B63]/40 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider">
+      <div className="bg-[#573820] text-[#F5EFE6] text-xs py-1.5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap min-w-0">
+            <span className="inline-flex items-center gap-1 font-medium bg-[#B77B63]/40 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider shrink-0">
               <Sparkles className="w-2.5 h-2.5" /> Direct Wholesale
             </span>
-            <span className="hidden sm:inline text-white/90">
+            <span className="hidden sm:inline text-white/90 truncate text-[11px] sm:text-xs">
               Premium 100% Organic Muslin Manufacturer • Tiruppur, Tamil Nadu
             </span>
-            <span className="sm:hidden text-white/90">
+            <span className="sm:hidden text-white/90 truncate text-[11px]">
               Wholesale Muslin Manufacturer • Tiruppur
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs shrink-0">
+          <div className="flex items-center gap-3 sm:gap-4 text-xs shrink-0 whitespace-nowrap">
             <a
               href={`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=Hello%20Ranji%20Textiles,%20I%20am%20interested%20in%20wholesale%20muslin%20catalogue`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 transition-colors"
+              className="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 transition-colors text-[11px] sm:text-xs"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-current" />
               <span className="hidden md:inline font-medium">WhatsApp Us</span>
             </a>
             <a
               href={`tel:${STORE_CONFIG.phone}`}
-              className="flex items-center gap-1 hover:text-white transition-colors"
+              className="flex items-center gap-1 hover:text-white transition-colors text-[11px] sm:text-xs"
             >
               <Phone className="w-3 h-3" />
               <span className="font-medium">+91 {STORE_CONFIG.phone}</span>
@@ -86,27 +87,28 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
 
       {/* Main Navigation Bar */}
       <div className="glass-header border-b border-[#E5D9CB] shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
-          {/* Logo / Brand Name */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3 lg:gap-6">
+          
+          {/* Logo / Brand Name - shrink-0 & whitespace-nowrap to never break */}
           <button
             onClick={() => handleNavClick("home")}
-            className="flex flex-col text-left group focus:outline-none"
+            className="flex flex-col text-left group focus:outline-none shrink-0"
           >
-            <span className="font-serif text-2xl sm:text-3xl tracking-wider font-semibold text-[#573820] group-hover:text-[#B77B63] transition-colors leading-none">
+            <span className="font-serif text-xl sm:text-2xl lg:text-3xl tracking-wider font-semibold text-[#573820] group-hover:text-[#B77B63] transition-colors leading-none whitespace-nowrap">
               RANJI TEXTILES
             </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#8C6B52] font-medium mt-1">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-[#8C6B52] font-medium mt-1 whitespace-nowrap">
               Tiruppur • Muslin Babywear
             </span>
           </button>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          {/* Desktop Nav Links - with whitespace-nowrap and flexible gaps */}
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-7 shrink min-w-0">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`text-sm font-medium transition-colors cursor-pointer relative py-1 ${
+                className={`text-xs xl:text-sm font-medium transition-colors cursor-pointer relative py-1.5 whitespace-nowrap shrink-0 ${
                   activeSection === link.id
                     ? "text-[#573820] font-semibold"
                     : "text-[#75553E] hover:text-[#573820]"
@@ -121,10 +123,10 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={() => handleNavClick("contact")}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium uppercase tracking-wider text-[#573820] border border-[#B77B63]/60 rounded-full hover:bg-[#E8DCCF] transition-all"
+              className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-[#573820] border border-[#B77B63]/60 rounded-full hover:bg-[#E8DCCF] transition-all whitespace-nowrap shrink-0 cursor-pointer"
             >
               Bulk Inquiry
             </button>
@@ -133,24 +135,24 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
             <button
               onClick={openCart}
               aria-label="Open Shopping Cart"
-              className="relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-[#573820] text-[#F5EFE6] hover:bg-[#3E2412] active:scale-95 transition-all shadow-sm"
+              className="relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-[#573820] text-[#F5EFE6] hover:bg-[#3E2412] active:scale-95 transition-all shadow-sm shrink-0 whitespace-nowrap cursor-pointer"
             >
               <ShoppingBag className="w-4 h-4 text-[#E8DCCF]" />
               <span className="text-xs font-semibold tracking-wide hidden sm:inline">
                 Cart
               </span>
               {totalQuantity > 0 && (
-                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1 text-[11px] font-bold bg-[#B77B63] text-white rounded-full leading-none">
+                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 text-[11px] font-bold bg-[#B77B63] text-white rounded-full leading-none">
                   {totalQuantity}
                 </span>
               )}
             </button>
 
-            {/* Mobile Hamburger Menu Toggle */}
+            {/* Mobile / Tablet Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
-              className="lg:hidden p-2 text-[#573820] hover:bg-[#E8DCCF] rounded-lg transition-colors focus:outline-none"
+              className="lg:hidden p-2 text-[#573820] hover:bg-[#E8DCCF] rounded-lg transition-colors focus:outline-none shrink-0"
             >
               {mobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -159,6 +161,7 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
               )}
             </button>
           </div>
+
         </div>
       </div>
 
@@ -177,7 +180,7 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 rounded-full bg-[#E8DCCF] text-[#573820]"
+              className="p-2 rounded-full bg-[#E8DCCF] text-[#573820] cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -189,7 +192,7 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className="w-full flex items-center justify-between py-3.5 px-4 rounded-xl text-left text-base font-medium text-[#573820] hover:bg-[#E8DCCF] active:bg-[#E8DCCF]/80 transition-all"
+                className="w-full flex items-center justify-between py-3.5 px-4 rounded-xl text-left text-base font-medium text-[#573820] hover:bg-[#E8DCCF] active:bg-[#E8DCCF]/80 transition-all cursor-pointer"
               >
                 <span>{link.label}</span>
                 <ChevronRight className="w-4 h-4 text-[#B77B63]" />

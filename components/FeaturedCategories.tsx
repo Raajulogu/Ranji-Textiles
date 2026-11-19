@@ -84,7 +84,7 @@ export function FeaturedCategories({
               <button
                 key={cat.name}
                 onClick={() => onSelectCategory(cat.name)}
-                className={`group flex flex-col text-left rounded-2xl p-2.5 sm:p-3 transition-all duration-300 cursor-pointer ${
+                className={`group flex flex-col h-full text-left rounded-2xl p-2.5 sm:p-3 transition-all duration-300 cursor-pointer ${
                   isSelected
                     ? "bg-white shadow-md ring-2 ring-[#B77B63]"
                     : "bg-[#E8DCCF]/50 hover:bg-white hover:shadow-sm"
