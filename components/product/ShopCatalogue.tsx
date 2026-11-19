@@ -22,11 +22,21 @@ export function ShopCatalogue({
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
       const matchesCategory =
-        selectedCategory === "All" || product.category === selectedCategory;
+        selectedCategory === "All"
+          ? true
+          : selectedCategory === "White Muslin Essentials"
+          ? product.catalogue === "White Muslin"
+          : selectedCategory === "Fancy Printed Collection"
+          ? product.catalogue === "Fancy Prints"
+          : product.category === selectedCategory;
+
       const matchesSearch =
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchQuery.toLowerCase());
+        product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (product.styleNo && product.styleNo.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (product.catalogue && product.catalogue.toLowerCase().includes(searchQuery.toLowerCase()));
+
       return matchesCategory && matchesSearch;
     }).sort((a, b) => {
       if (sortBy === "price-asc") return a.startingPrice - b.startingPrice;
@@ -103,6 +113,10 @@ export function ShopCatalogue({
               const count =
                 cat === "All"
                   ? PRODUCTS.length
+                  : cat === "White Muslin Essentials"
+                  ? PRODUCTS.filter((p) => p.catalogue === "White Muslin").length
+                  : cat === "Fancy Printed Collection"
+                  ? PRODUCTS.filter((p) => p.catalogue === "Fancy Prints").length
                   : PRODUCTS.filter((p) => p.category === cat).length;
 
               return (

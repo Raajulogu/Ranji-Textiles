@@ -41,12 +41,21 @@ export function ProductCard({ product, onViewDetails }: ProductCardProps) {
 
         {/* Badges Overlay */}
         <div className="absolute top-2.5 left-2.5 flex flex-col gap-1 z-10">
-          {product.isBestseller && (
-            <span className="inline-flex items-center gap-1 bg-[#573820] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full shadow-xs">
-              <Sparkles className="w-2.5 h-2.5 text-amber-300" /> Bestseller
+          {product.catalogue === "White Muslin" ? (
+            <span className="inline-flex items-center gap-1 bg-[#573820] text-[#F5EFE6] text-[10px] font-semibold px-2 py-0.5 rounded-full shadow-xs">
+              Muslin White
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 bg-[#B77B63] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full shadow-xs">
+              Fancy Print
             </span>
           )}
-          <span className="bg-white/90 backdrop-blur-xs text-[#573820] text-[10px] font-medium px-2 py-0.5 rounded-full shadow-2xs">
+          {product.moq && (
+            <span className="bg-amber-100 text-amber-900 border border-amber-300 text-[9px] font-bold px-1.5 py-0.5 rounded shadow-2xs">
+              MOQ: 50 pcs
+            </span>
+          )}
+          <span className="bg-white/95 backdrop-blur-xs text-[#573820] text-[10px] font-medium px-2 py-0.5 rounded-full shadow-2xs">
             {product.category}
           </span>
         </div>

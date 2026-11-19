@@ -129,11 +129,18 @@ export function ProductDetailsModal({
               
               <div>
                 <span className="text-[11px] font-semibold uppercase tracking-widest text-[#B77B63] block">
-                  Wholesale Muslin Collection • Tiruppur
+                  {product.catalogue === "White Muslin" ? "Muslin White Catalogue" : "Fancy Printed Catalogue"} • Tiruppur
                 </span>
-                <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[#573820] mt-1">
-                  {product.name}
-                </h2>
+                <div className="flex items-center gap-2 mt-1">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[#573820]">
+                    {product.name}
+                  </h2>
+                </div>
+                {product.moq && (
+                  <div className="mt-2 inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 border border-amber-300 text-xs font-semibold px-2.5 py-1 rounded-lg">
+                    <span>MOQ: {product.moq}</span>
+                  </div>
+                )}
               </div>
 
               {/* Dynamic Price Display */}

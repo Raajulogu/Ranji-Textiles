@@ -2,6 +2,7 @@
 
 import React from "react";
 import { STORE_CONFIG } from "@/data/config";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import {
   Phone,
   Mail,
@@ -30,14 +31,7 @@ export function Footer({ onNavigate }: FooterProps) {
           
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="space-y-1">
-              <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-wider text-white block">
-                RANJI TEXTILES
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#B77B63] font-semibold">
-                Tiruppur • Muslin Babywear Manufacturer
-              </span>
-            </div>
+            <BrandLogo size="md" variant="light" />
 
             <p className="text-xs sm:text-sm text-[#D8C7B5] leading-relaxed max-w-sm">
               Thoughtfully crafted muslin essentials for little ones. Direct wholesale manufacturing of pure organic double gauze baby clothing, sets, swaddles, and custom printed fabrics.

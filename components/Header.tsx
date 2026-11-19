@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { STORE_CONFIG } from "@/data/config";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import {
   ShoppingBag,
   Menu,
@@ -89,17 +90,12 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
       <div className="glass-header border-b border-[#E5D9CB] shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3 lg:gap-6">
           
-          {/* Logo / Brand Name - shrink-0 & whitespace-nowrap to never break */}
+          {/* Logo / Brand Name - with bespoke Tiruppur organic cotton mark */}
           <button
             onClick={() => handleNavClick("home")}
-            className="flex flex-col text-left group focus:outline-none shrink-0"
+            className="group focus:outline-none shrink-0 cursor-pointer"
           >
-            <span className="font-serif text-xl sm:text-2xl lg:text-3xl tracking-wider font-semibold text-[#573820] group-hover:text-[#B77B63] transition-colors leading-none whitespace-nowrap">
-              RANJI TEXTILES
-            </span>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-[#8C6B52] font-medium mt-1 whitespace-nowrap">
-              Tiruppur • Muslin Babywear
-            </span>
+            <BrandLogo size="md" variant="dark" />
           </button>
 
           {/* Desktop Nav Links - with whitespace-nowrap and flexible gaps */}
@@ -170,14 +166,7 @@ export function Header({ activeSection = "home", onNavigate }: HeaderProps) {
         <div className="lg:hidden fixed inset-0 z-50 flex flex-col bg-[#F5EFE6] animate-fade-in overflow-y-auto">
           {/* Mobile Header bar */}
           <div className="flex items-center justify-between p-4 border-b border-[#E5D9CB] bg-[#F5EFE6]">
-            <div>
-              <span className="font-serif text-xl font-semibold text-[#573820] block">
-                RANJI TEXTILES
-              </span>
-              <span className="text-[10px] tracking-widest uppercase text-[#8C6B52]">
-                Wholesale Muslin Essentials
-              </span>
-            </div>
+            <BrandLogo size="sm" variant="dark" />
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-2 rounded-full bg-[#E8DCCF] text-[#573820] cursor-pointer"

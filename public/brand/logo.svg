@@ -1,0 +1,21 @@
+<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer subtle circular emblem -->
+  <g transform="translate(20, 10)">
+    <circle cx="50" cy="50" r="46" stroke="#B77B63" stroke-width="1.5" stroke-dasharray="3 3" stroke-opacity="0.6"/>
+    <circle cx="50" cy="50" r="42" stroke="#B77B63" stroke-width="0.8" stroke-opacity="0.4"/>
+    
+    <!-- Organic Muslin Cotton Blossom -->
+    <path d="M50 20C44 28 42 36 50 44C58 36 56 28 50 20Z" fill="#B77B63" fill-opacity="0.9"/>
+    <path d="M50 72C44 64 42 56 50 48C58 56 56 64 50 72Z" fill="#B77B63" fill-opacity="0.9"/>
+    <path d="M24 46C32 40 40 42 48 50C40 58 32 60 24 46Z" fill="#573820" fill-opacity="0.9"/>
+    <path d="M76 46C68 40 60 42 52 50C60 58 68 60 76 46Z" fill="#573820" fill-opacity="0.9"/>
+    <path d="M32 68C40 76 60 76 68 68C62 72 38 72 32 68Z" fill="#B77B63"/>
+    
+    <circle cx="50" cy="50" r="4.5" fill="#FFFFFF"/>
+    <circle cx="50" cy="50" r="2.5" fill="#B77B63"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="140" y="62" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="34" font-weight="600" fill="#573820" letter-spacing="3">RANJI TEXTILES</text>
+  <text x="142" y="86" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#8C6B52" letter-spacing="4">TIRUPPUR • MUSLIN BABYWEAR</text>
+</svg>

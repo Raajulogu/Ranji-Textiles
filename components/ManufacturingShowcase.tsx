@@ -28,7 +28,7 @@ export function ManufacturingShowcase() {
               
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-[#C7B29B]/20">
                 <img
-                  src="/brand/factory.jpg"
+                  src="/brand/actual_factory.png"
                   alt="Ranji Textiles modern garment manufacturing workshop in Tiruppur, India"
                   className="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-700"
                   loading="lazy"
